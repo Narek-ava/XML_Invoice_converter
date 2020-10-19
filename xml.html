@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Narek Avagyan">
+    <title>xml</title>
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
+    <style>
+        #error {
+            color: #ff0505;
+            width: 25%;
+            height: 112px;
+            float: right;
+            font-size: x-large
+        }
+
+        body {
+            font-family: Arial, serif;
+        }
+
+        .tab {
+            width: max-content;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button {
+            background-color: #ccc;
+        }
+
+        .tabContent {
+            display: none;
+            padding: 6px 12px;
+            /*border: 1px solid #ccc;*/
+            border-top: none;
+        }
+
+        .ex1 {
+
+            overflow: scroll;
+        }
+
+        #loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 400ms linear infinite;
+            display: none;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #filesX {
+            width: 500px;
+        }
+
+        #loadedFiles {
+            text-align: -webkit-center;
+            font-size: x-large;
+            /*width: 25%;*/
+            /*height:  112px;*/
+        }
+    </style>
+</head>
+<body style="background-color: #ece8e3">
+<br><input class="btn btn-secondary buttons-csv buttons-html5" type="file" id="filesX" name="files"/>
+<div id="error" class="ex1"></div>
+<div id="bag">
+    <ul class="files"></ul>
+</div>
+<button id="runTask" class="btn btn-secondary buttons-csv buttons-html5">RunTask</button>
+<button onclick="reset()" class="btn btn-secondary buttons-csv buttons-html5">Reset</button>
+<br>
+<br>
+<div id="loader"></div>
+<div id="loadedFiles"></div>
+<hr>
+<div class="tab">
+    <button class="tabLinks" onclick="openTableButton(event, 'products')">Ապրանքներ</button>
+    <button class="tabLinks" onclick="openTableButton(event, 'services')">Ծառայություններ</button>
+</div>
+
+<div id="products" class="tabContent">
+    <table id="table1" class="display" style="width:100%">
+        <thead>
+        <tr>
+            <th>NN Ը/Կ</th>
+            <th>Առաքվող արտադրանքի, ապրանքի անվանումը</th>
+            <th>"Չափի միավորը"</th>
+            <th>"Միավորի գինը"</th>
+            <th>Քանակը</th>
+            <th>Զեղչ(%)</th>
+            <th>Արժեքը</th>
+            <th>"ԱԱՀ դրույքաչափը (%)"</th>
+            <th>ԱԱՀ գումար</th>
+            <th>Ընդամենը</th>
+            <th>Սերիան և համարը</th>
+            <th>Դուրս գրման ամսաթիվ</th>
+            <th>Մատուցման ամսաթիվը</th>
+            <th>Կնքման ամսաթիվ</th>
+            <th>Համար</th>
+            <th>Անվանումը</th>
+            <th>ՀՎՀՀ</th>
+        </tr>
+        </thead>
+
+        <tbody id="tbody1">
+
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>NN Ը/Կ</th>
+            <th>Առաքվող արտադրանքի, ապրանքի անվանումը</th>
+            <th>"Չափի միավորը"</th>
+            <th>"Միավորի գինը"</th>
+            <th>Քանակը</th>
+            <th>Զեղչ(%)</th>
+            <th>Արժեքը</th>
+            <th>"ԱԱՀ դրույքաչափը (%)"</th>
+            <th>ԱԱՀ գումար</th>
+            <th>Ընդամենը</th>
+            <th>Սերիան և համարը</th>
+            <th>Դուրս գրման ամսաթիվ</th>
+            <th>Մատուցման ամսաթիվը</th>
+            <th>Կնքման ամսաթիվ</th>
+            <th>Համար</th>
+            <th>Անվանումը</th>
+            <th>ՀՎՀՀ</th>
+        </tr>
+        </tfoot>
+
+    </table>
+</div>
+
+<div id="services" class="tabContent">
+    <table id="table2" class="display" style="width:100%">
+
+        <thead>
+        <tr>
+            <th>NN Ը/Կ</th>
+            <th>Ծառայությունների (աշխատանքների) անվանումը (բովանդակությունը)</th>
+            <th>"Չափի միավորը"</th>
+            <th>"Միավորի գինը"</th>
+            <th>"Ընդհանուր ծավալը կամ ժամանակաշրջանը"</th>
+            <th>Զեղչ(%)</th>
+            <th>Արժեքը</th>
+            <th>"ԱԱՀ դրույքաչափը (%)"</th>
+            <th>ԱԱՀ գումար</th>
+            <th>Ընդամենը</th>
+            <th>Սերիան և համարը</th>
+            <th>Դուրս գրման ամսաթիվ</th>
+            <th>Մատուցման ամսաթիվը</th>
+            <th>Կնքման ամսաթիվ</th>
+            <th>Համար</th>
+            <th>Անվանումը</th>
+            <th>ՀՎՀՀ</th>
+        </tr>
+        </thead>
+        <tbody id="tbody2">
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>NN Ը/Կ</th>
+            <th>Առաքվող արտադրանքի, ապրանքի անվանումը</th>
+            <th>"Չափի միավորը"</th>
+            <th>"Միավորի գինը"</th>
+            <th>Քանակը</th>
+            <th>Զեղչ(%)</th>
+            <th>Արժեքը</th>
+            <th>"ԱԱՀ դրույքաչափը (%)"</th>
+            <th>ԱԱՀ գումար</th>
+            <th>Ընդամենը</th>
+            <th>Սերիան և համարը</th>
+            <th>Դուրս գրման ամսաթիվ</th>
+            <th>Մատուցման ամսաթիվը</th>
+            <th>Կնքման ամսաթիվ</th>
+            <th>Համար</th>
+            <th>Անվանումը</th>
+            <th>ՀՎՀՀ</th>
+        </tr>
+        </tfoot>
+
+    </table>
+</div>
+
+
+<h1></h1>
+
+<!--Scripts///////////////////////////////////////////////////////////////////////////////-->
+
+<script type="text/javascript" src="DataTables/datatables.js"></script>
+<script src="xml.js"></script>
+</body>
+</html>
