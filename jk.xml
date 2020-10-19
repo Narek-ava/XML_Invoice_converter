@@ -1,0 +1,76 @@
+
+<ExportedAccDocData xmlns="http://www.taxservice.am/tp3/invoice/definitions">
+    <SignedAccDocData>
+        <Data>
+            <SignableData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AccountingDocument" Version="1.0">
+                <User>ha_group.ltd</User>
+                <Type>3</Type>
+                <GeneralInfo>
+                    <EcrReceipt></EcrReceipt>
+                    <InvoiceNumber>
+                        <Number>8326488858</Number>
+                        <Series>Բ</Series>
+                    </InvoiceNumber>
+                    <DeliveryDate>2020-09-30+04:00</DeliveryDate>
+                    <Procedure>1</Procedure>
+                    <DealInfo>
+                        <DealDate>2020-02-21+04:00</DealDate>
+                        <DealNumber>ՋԿ-ԳՀԾՁԲ-20/1 </DealNumber>
+                    </DealInfo>
+                    <AdditionalData>18.09.2020թ. N12 համաձայնագիր </AdditionalData>
+                </GeneralInfo>
+                <SupplierInfo>
+                    <VATNumber></VATNumber>
+                    <Taxpayer>
+                        <TIN>02263759</TIN>
+                        <Name>«ԷՅՉԷՅ ԳՐՈՒՊ» Սահմանափակ պատասխանատվությամբ ընկերություն (ՍՊԸ)</Name>
+                        <Address>ԵՐԵՎԱՆ ՇԵՆԳԱՎԻԹ ՇԵՆԳԱՎԻԹ ԹԱՂԱՄԱՍ ԱՐՏԱՇԻՍՅԱՆ Փ. 51/16 12</Address>
+                        <BankAccount>
+                            <BankName>ԱԿԲԱ-ԿՐԵԴԻՏ ԱԳՐԻԿՈԼ ԲԱՆԿ ՓԲԸ Տերյան մ/ճ</BankName>
+                            <BankAccountNumber>220563330616000</BankAccountNumber>
+                        </BankAccount>
+                    </Taxpayer>
+                </SupplierInfo>
+                <BuyerInfo>
+                    <VATNumber>00009812/1</VATNumber>
+                    <Taxpayer>
+                        <TIN>00009812</TIN>
+                        <Name>«ՋՐԱՅԻՆ ԿԱՌՈՒՅՑՆԵՐԻ» Փակ բաժնետիրական ընկերություն (ՓԲԸ)</Name>
+                        <Address>ԵՐԵՎԱՆ ԱՋԱՓՆՅԱԿ ԱՋԱՓՆՅԱԿ ԹԱՂԱՄԱՍ ՀԱԼԱԲՅԱՆ 31/2</Address>
+                        <BankAccount>
+                            <BankName>Հայբիզնեսբանկ ՓԲԸ</BankName>
+                            <BankAccountNumber>1150005747030100</BankAccountNumber>
+                        </BankAccount>
+                        <AdditionalData>Ծառայությունների մատուցումը ք. Երևան, Երևանյան Ջրամբար</AdditionalData>
+                        <TinNotRequired>false</TinNotRequired>
+                    </Taxpayer>
+                </BuyerInfo>
+                <GoodsInfo>
+                    <Good>
+                        <Description>Բեռնման և բեռնաթափման /ավտոկռունկի/ ծառայություններ 20-30.09.2020</Description>
+                        <Unit>ժամ</Unit>
+                        <Amount>25.0</Amount>
+                        <PricePerUnit>15000.0</PricePerUnit>
+                        <Price>375000.0</Price>
+                        <TotalPrice>375000.0</TotalPrice>
+                    </Good>
+                    <Total>
+                        <TotalPrice>375000.0</TotalPrice>
+                    </Total>
+                </GoodsInfo>
+            </SignableData>
+        </Data>
+        <Signature>
+            <SignatureType>PKCS7</SignatureType>
+            <SignatureValue>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</SignatureValue>
+        </Signature>
+        <Signature>
+            <SignatureType>PKCS7</SignatureType>
+            <SignatureValue>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</SignatureValue>
+        </Signature>
+        <AccDocMetadata>
+            <SubmissionDate>2020-10-06T10:58:46.150+04:00</SubmissionDate>
+            <CoSignDate>2020-10-06T11:36:13.563+04:00</CoSignDate>
+        </AccDocMetadata>
+    </SignedAccDocData>
+</ExportedAccDocData>

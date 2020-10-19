@@ -1,0 +1,75 @@
+
+<ExportedData xmlns="http://www.taxservice.am/tp3/invoice/definitions">
+    <SignedData>
+        <Data>
+            <SignableData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Invoice" Version="1.0">
+                <User>gncarmen123</User>
+                <Type>3</Type>
+                <GeneralInfo>
+                    <InvoiceNumber>
+                        <Number>3262332002</Number>
+                        <Series>Ա</Series>
+                    </InvoiceNumber>
+                    <SupplyDate>2020-09-30+04:00</SupplyDate>
+                    <Procedure>2</Procedure>
+                    <DealInfo>
+                        <DealDate>2020-07-14+04:00</DealDate>
+                        <DealNumber>C2025</DealNumber>
+                    </DealInfo>
+                    <AdditionalData>C-2020թ. Սեպտեմբեր</AdditionalData>
+                    <AdjustmentAccount>false</AdjustmentAccount>
+                </GeneralInfo>
+                <SupplierInfo>
+                    <VATNumber>00096001/1</VATNumber>
+                    <Taxpayer>
+                        <TIN>00096001</TIN>
+                        <Name>«ՋԻԷՆՍԻ-ԱԼՖԱ» Փակ բաժնետիրական ընկերություն (ՓԲԸ)</Name>
+                        <Address>ԿՈՏԱՅՔ ԱԲՈՎՅԱՆ ԱԲՈՎՅԱՆ Խաղաղության փող. 1 -</Address>
+                        <BankAccount>
+                            <BankName>Կոնվերս Բանկ ՓԲԸ</BankName>
+                            <BankAccountNumber>1930011980040100</BankAccountNumber>
+                        </BankAccount>
+                        <AdditionalData>ք. Աբովյան, Խաղաղության 1</AdditionalData>
+                    </Taxpayer>
+                </SupplierInfo>
+                <BuyerInfo>
+                    <Taxpayer>
+                        <TIN>00139711</TIN>
+                        <Name>«ԷՅՉ ԷՍ ՓԱՐԹՆԵՐՍ» Սահմանափակ պատասխանատվությամբ ընկերություն (ՍՊԸ)</Name>
+                        <Address>ԵՐԵՎԱՆ ԱՋԱՓՆՅԱԿ ԱՋԱՓՆՅԱԿ ԹԱՂԱՄԱՍ ԴԱՎԹԱՇԵՆ 1 ԹՂՄ. 27շ 8բն</Address>
+                        <BankAccount>
+                            <BankName>.</BankName>
+                            <BankAccountNumber>.</BankAccountNumber>
+                        </BankAccount>
+                        <AdditionalData>.</AdditionalData>
+                        <TinNotRequired>false</TinNotRequired>
+                    </Taxpayer>
+                </BuyerInfo>
+                <GoodsInfo>
+                    <Good>
+                        <Description>Ինտերնետ հասանելիություն</Description>
+                        <Unit>ամիս</Unit>
+                        <Amount>1.0</Amount>
+                        <PricePerUnit>12500.0</PricePerUnit>
+                        <Price>12500.0</Price>
+                        <VATRate>20.0</VATRate>
+                        <VAT>2500.0</VAT>
+                        <TotalPrice>15000.0</TotalPrice>
+                    </Good>
+                    <Total>
+                        <Price>12500.0</Price>
+                        <VAT>2500.0</VAT>
+                        <TotalPrice>15000.0</TotalPrice>
+                    </Total>
+                </GoodsInfo>
+            </SignableData>
+        </Data>
+        <Signature>
+            <SignatureType>PKCS7</SignatureType>
+            <SignatureValue>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</SignatureValue>
+        </Signature>
+        <InvoiceMetadata>
+            <SubmissionDate>2020-10-08T18:51:58.569+04:00</SubmissionDate>
+        </InvoiceMetadata>
+    </SignedData>
+</ExportedData>
